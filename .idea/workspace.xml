@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c4c64018-aaf2-4944-8fd1-4cd973b7cc6f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/navigation/MealNavigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/MealNavigator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/CategoriesScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/CategoriesScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/CategoryMealScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/CategoryMealScreen.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +64,7 @@
       <updated>1577023584214</updated>
       <workItem from="1577023587038" duration="2545000" />
       <workItem from="1577027520609" duration="4083000" />
-      <workItem from="1577090285057" duration="10971000" />
+      <workItem from="1577090285057" duration="12377000" />
     </task>
     <servers />
   </component>
