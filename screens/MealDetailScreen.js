@@ -7,7 +7,6 @@ const MealDetailScreen = props => {
       <Text>Meals Detail</Text>
     </View>
   )
-
 };
 
 const styles = StyleSheet.create({
