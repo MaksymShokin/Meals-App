@@ -3,22 +3,26 @@ import {View, Text, StyleSheet, Button, Platform, FlatList} from 'react-native';
 
 import {CATEGORIES, MEALS} from '../data/dummy-data';
 
+import MealItem from '../components/MealItem'
+
 const CategoryMealScreen = props => {
   const renderMealItem = itemData => {
     return (
-      <View>
-        {/*<Button*/}
-        {/*  onPress={() => {*/}
-        {/*    props.navigation.navigate({*/}
-        {/*      routeName: 'MealDetail',*/}
-        {/*      params: {*/}
-        {/*        mealId: itemData.item.id*/}
-        {/*      }*/}
-        {/*    })*/}
-        {/*  }}*/}
-        {/*/>*/}
-        <Text>{itemData.item.title}</Text>
-      </View>
+      <MealItem
+        title={itemData.item.title}
+        affordability={itemData.item.affordability}
+        complexity={itemData.item.complexity}
+        imageUrl={itemData.item.imageUrl}
+        duration={itemData.item.duration}
+        onSelect={()=>{
+          props.navigation.navigate({
+            routeName: 'MealDetail',
+            params: {
+              categoryId: itemData.item.id
+            }
+          })
+        }}
+      />
     )
   };
 
@@ -26,11 +30,10 @@ const CategoryMealScreen = props => {
   const mealsToDisplay = MEALS.filter(meal => meal.categoryId.indexOf(catId) >= 0);
   const catTitle = CATEGORIES.find(cat => cat.id === catId);
 
-
-
   return (
     <View style={styles.screen}>
       <FlatList
+        style={styles.flatList}
         data={mealsToDisplay}
         renderItem={renderMealItem}
       />
@@ -51,10 +54,11 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    padding: 15
   },
-  meal: {
-    height: 150
+  flatList: {
+    width: '100%'
   }
 });
 
