@@ -3,22 +3,24 @@ import {View, Text, StyleSheet, Button, FlatList, TouchableOpacity, Platform} fr
 
 import {CATEGORIES} from '../data/dummy-data';
 import Colors from '../constants/Colors';
+import GridItem from '../components/GridItem';
 
 const CategoriesScreen = props => {
   const renderListItem = itemData => {
     return (
-      <TouchableOpacity style={styles.listItem} onPress={()=>{
-        props.navigation.navigate({
-          routeName: 'CategoryMeal',
-          params: {
-            categoryId: itemData.item.id
-          }
-        })
-      }}>
-        <View>
-          <Text>{itemData.item.title}</Text>
-        </View>
-      </TouchableOpacity>
+      <GridItem
+        style={styles.screen}
+        color={itemData.item.color}
+        title={itemData.item.title}
+        onSelect={()=>{
+          props.navigation.navigate({
+            routeName: 'CategoryMeal',
+            params: {
+              categoryId: itemData.item.id
+            }
+          })
+        }}
+      />
     )
   };
 
@@ -36,11 +38,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
-  },
-  listItem: {
-    flex: 1,
-    margin: 15,
-    height: 150
   }
 });
 
