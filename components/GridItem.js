@@ -25,15 +25,15 @@ const styles = StyleSheet.create({
     margin: 12,
     height: 150,
     borderRadius: 15,
-    overflow: 'hidden'
+    elevation: 5,
+    overflow: Platform.OS === 'android' && Platform.Version >= 21 ? 'hidden' : 'visible'
   },
   gridItem: {
-    flex: 1,
+    flex: 1
   },
   listItem: {
     flex: 1,
     borderRadius: 15,
-    elevation: 3,
     padding: 15,
     justifyContent: 'flex-end',
     alignItems: 'flex-end'
