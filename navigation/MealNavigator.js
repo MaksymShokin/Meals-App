@@ -20,6 +20,11 @@ const MealNavigator = createStackNavigator({
   CategoryMeal: CategoryMealScreen,
   MealDetail: MealDetailScreen
 }, {
+    navigationOptions: {
+      tabBarLabel: 'Favesfsfs!!',
+    }
+},
+  {
   defaultNavigationOptions: {
     headerStyle: {
       backgroundColor: Platform.OS === 'android' ? Colors.primaryColor : ''
