@@ -2,6 +2,7 @@ import React from 'react';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
+import {createMaterialBottomTabNavigator} from 'react-navigation-material-bottom-tabs';
 import FavouriteMealScreen from '../screens/FavouriteMealScreen';
 import CategoriesScreen from '../screens/CategoriesScreen';
 import CategoryMealScreen from '../screens/CategoryMealScreen';
@@ -20,11 +21,6 @@ const MealNavigator = createStackNavigator({
   CategoryMeal: CategoryMealScreen,
   MealDetail: MealDetailScreen
 }, {
-    navigationOptions: {
-      tabBarLabel: 'Favesfsfs!!',
-    }
-},
-  {
   defaultNavigationOptions: {
     headerStyle: {
       backgroundColor: Platform.OS === 'android' ? Colors.primaryColor : ''
@@ -33,19 +29,32 @@ const MealNavigator = createStackNavigator({
   }
 });
 
-const BottomTabNavigator = createBottomTabNavigator({
+const BottomTabNavigatorConfig = {
   Meals: {screen: MealNavigator, navigationOptions: {
-    tabBarIcon: (tabInfo) => {
-      return <Ionicons name='ios-restaurant' size={25} color={tabInfo.tintColor}/>
-    }
+      tabBarIcon: (tabInfo) => {
+        return <Ionicons name='ios-restaurant' size={25} color={tabInfo.tintColor}/>
+      },
+      tabBarColor: Colors.primaryColor
     }},
   Favourites: {screen: FavouriteMealScreen, navigationOptions: {
-    tabBarLabel: 'Favs!!',
-    tabBarIcon: (tabInfo) => {
-      return <Ionicons name='ios-star' size={25} color={tabInfo.tintColor}/>
+      tabBarLabel: 'Favs!!',
+      tabBarIcon: (tabInfo) => {
+        return <Ionicons name='ios-star' size={25} color={tabInfo.tintColor}/>
+      },
+      tabBarColor: Colors.secondaryColor
+    }}
+};
+
+const BottomTabNavigator = Platform.OS === 'android' ? createMaterialBottomTabNavigator(
+  BottomTabNavigatorConfig,
+  {
+    shifting: false,
+    activeColor: '#fff',
+    barStyle: {
+      backgroundColor: Colors.primaryColor
     }
-  }}
-}, {
+  }
+) : createBottomTabNavigator(BottomTabNavigatorConfig, {
   tabBarOptions: {
     activeTintColor: Colors.secondaryColor
   }
