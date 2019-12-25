@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4c64018-aaf2-4944-8fd1-4cd973b7cc6f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/components/GridItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/GridItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/navigation/MealNavigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/MealNavigator.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,17 +63,35 @@
       <workItem from="1577175942742" duration="74000" />
       <workItem from="1577176026693" duration="349000" />
       <workItem from="1577185461921" duration="11048000" />
-      <workItem from="1577227644345" duration="2349000" />
+      <workItem from="1577227644345" duration="2551000" />
+      <workItem from="1577273132264" duration="1293000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="155" y="93" width="1288" height="678" key="DiffContextDialog" timestamp="1577230174449">
+      <screen x="62" y="0" width="1474" height="864" />
+    </state>
+    <state x="155" y="93" width="1288" height="678" key="DiffContextDialog/62.0.1474.864@62.0.1474.864" timestamp="1577230174449" />
     <state x="308" y="74" key="SettingsEditor" timestamp="1577026657335">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
