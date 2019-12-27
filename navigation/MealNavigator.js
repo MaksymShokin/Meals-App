@@ -1,4 +1,5 @@
 import React from 'react';
+import {Text} from 'react-native';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
@@ -18,6 +19,12 @@ import CustomHeaderButton from '../components/HeaderButtons';
 const defaultNavOptionsConfig = {
   headerStyle: {
     backgroundColor: Platform.OS === 'android' ? Colors.primaryColor : ''
+  },
+  headerTitle: {
+    fontFamily: 'open-sans-bold'
+  },
+  headerTitleStyle: {
+    fontFamily: 'open-sans'
   },
   headerTintColor: Platform.OS === 'android' ? 'white' : Colors.primaryColor
 };
@@ -54,12 +61,13 @@ const BottomTabNavigatorConfig = {
       tabBarIcon: (tabInfo) => {
         return <Ionicons name='ios-restaurant' size={25} color={tabInfo.tintColor}/>
       },
-      tabBarColor: Colors.primaryColor
+      tabBarColor: Colors.primaryColor,
+      tabBarLabel: Platform.OS === 'android' ? <Text style={{fontFamily: 'open-sans-bold'}}> Meals </Text> : 'Meals'
     }
   },
   Favourites: {
     screen: FavNavigator, navigationOptions: {
-      tabBarLabel: 'Favs!!',
+      tabBarLabel: Platform.OS === 'android' ? <Text style={{fontFamily: 'open-sans-bold'}}> Favourites </Text> : 'Favourites',
       tabBarIcon: (tabInfo) => {
         return <Ionicons name='ios-star' size={25} color={tabInfo.tintColor}/>
       },
@@ -79,6 +87,9 @@ const BottomTabNavigator = Platform.OS === 'android' ? createMaterialBottomTabNa
   }
 ) : createBottomTabNavigator(BottomTabNavigatorConfig, {
   tabBarOptions: {
+    labelStyle: {
+      fontFamily: 'open-sans-bold'
+    },
     activeTintColor: Colors.secondaryColor
   }
 });
