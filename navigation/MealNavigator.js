@@ -41,7 +41,10 @@ const FavNavigator = createStackNavigator({
 
 const FilterNavigator = createStackNavigator({
   Filters: FiltersScreen
-},{
+}, {
+  navigationOptions: {
+    drawerLabel: 'Filter meals'
+  },
   defaultNavigationOptions: defaultNavOptionsConfig
 });
 
@@ -83,6 +86,10 @@ const BottomTabNavigator = Platform.OS === 'android' ? createMaterialBottomTabNa
 const DrawerNavigator = createDrawerNavigator({
   Meals: BottomTabNavigator,
   Filters: FilterNavigator
+}, {
+  contentOptions: {
+    activeTintColor: Colors.secondaryColor,
+  }
 });
 
 export default createAppContainer(DrawerNavigator)

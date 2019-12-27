@@ -4,8 +4,6 @@
     <list default="true" id="c4c64018-aaf2-4944-8fd1-4cd973b7cc6f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/navigation/MealNavigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/MealNavigator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/CategoriesScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/CategoriesScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/FavouriteMealScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/FavouriteMealScreen.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +64,8 @@
       <workItem from="1577176026693" duration="349000" />
       <workItem from="1577185461921" duration="11048000" />
       <workItem from="1577227644345" duration="2551000" />
-      <workItem from="1577273132264" duration="8506000" />
+      <workItem from="1577273132264" duration="9434000" />
+      <workItem from="1577483636880" duration="598000" />
     </task>
     <servers />
   </component>
