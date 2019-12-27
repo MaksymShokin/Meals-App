@@ -1,8 +1,7 @@
 import React from 'react';
-import {View, Text, StyleSheet, Button, FlatList, TouchableOpacity, Platform} from 'react-native';
+import {StyleSheet, FlatList} from 'react-native';
 
 import {CATEGORIES} from '../data/dummy-data';
-import Colors from '../constants/Colors';
 import GridItem from '../components/GridItem';
 import {HeaderButtons, Item} from 'react-navigation-header-buttons';
 import CustomHeaderButton from '../components/HeaderButtons';
