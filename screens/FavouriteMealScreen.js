@@ -9,7 +9,7 @@ const FavouriteMealScreen = props => {
   const availableMeals = useSelector(state => state.meals.favouriteMeals);
 
   return (
-    <MealList navigation={props.navigation} mealsToDisplay={mealsToDisplay}/>
+    <MealList navigation={props.navigation} mealsToDisplay={availableMeals}/>
   )
 };
 
