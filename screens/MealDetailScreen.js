@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {View, Text, StyleSheet, ScrollView, Image} from 'react-native';
 import {HeaderButtons, Item} from 'react-navigation-header-buttons';
 import CustomHeaderButton from '../components/HeaderButtons';
@@ -17,6 +17,11 @@ const MealDetailScreen = props => {
           style={styles.listText}>{elem}</DefaultText></View>)
     }
   );
+
+  useEffect(() => {
+    props.navigation.setParams({title: mealToDisplay.title})
+  },[mealToDisplay]);
+  // title will appear only after render with delay
 
   const stepsList = mealToDisplay.steps.map(elem => {
       return (
@@ -51,10 +56,11 @@ const MealDetailScreen = props => {
 
 MealDetailScreen.navigationOptions = navigationData => {
   const mealId = navigationData.navigation.getParam('mealId');
-  const mealToDisplay = MEALS.find(meal => meal.id === mealId);
+  const mealTitle = navigationData.navigation.getParam('title');
+  // const mealToDisplay = MEALS.find(meal => meal.id === mealId);
 
   return {
-    headerTitle: mealToDisplay.title,
+    headerTitle: mealTitle,
     headerRight: (
       <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
         <Item title='Favourite' iconName='ios-star' onPress={() => console.log('fav')}/>
