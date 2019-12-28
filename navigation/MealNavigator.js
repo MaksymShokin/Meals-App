@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {Text, Platform} from 'react-native';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
@@ -10,11 +10,8 @@ import CategoriesScreen from '../screens/CategoriesScreen';
 import CategoryMealScreen from '../screens/CategoryMealScreen';
 import MealDetailScreen from '../screens/MealDetailScreen';
 import FiltersScreen from '../screens/FiltersScreen';
-import {Platform} from 'react-native';
 import Colors from '../constants/Colors';
 import {Ionicons} from '@expo/vector-icons';
-import {HeaderButtons, Item} from 'react-navigation-header-buttons';
-import CustomHeaderButton from '../components/HeaderButtons';
 
 const defaultNavOptionsConfig = {
   headerStyle: {

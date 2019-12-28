@@ -2,7 +2,6 @@ import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {HeaderButtons, Item} from 'react-navigation-header-buttons';
 import CustomHeaderButton from '../components/HeaderButtons';
-import FavouriteMealScreen from './FavouriteMealScreen';
 
 const FiltersScreen = props => {
   return (
