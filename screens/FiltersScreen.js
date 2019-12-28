@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import {View, Text, StyleSheet, Switch, Platform} from 'react-native';
 import {HeaderButtons, Item} from 'react-navigation-header-buttons';
 import CustomHeaderButton from '../components/HeaderButtons';
@@ -11,7 +11,7 @@ const FiltersSwitch = props => {
       <DefaultText style={styles.label}>{props.title}</DefaultText>
       <Switch
         thumbColor={Platform.OS === 'android' ? Colors.primaryColor : ''}
-        trackColor={{true:Colors.primaryColor}}
+        trackColor={{true: Colors.primaryColor}}
         value={props.state}
         onValueChange={props.onChange}/>
     </View>
@@ -19,20 +19,38 @@ const FiltersSwitch = props => {
 };
 
 const FiltersScreen = props => {
+  const {navigation} = props;
+
   const [glutenFree, setGlutenFree] = useState(false);
   const [lactoseFree, setLactoseFree] = useState(false);
   const [vegan, setVegan] = useState(false);
   const [vegetarian, setVegetarian] = useState(false);
+
+  const saveFilters = useCallback(() => {
+    const filters = {
+      glutenFree,
+      lactoseFree,
+      vegan,
+      vegetarian
+    };
+
+    console.log(filters)
+  }, [glutenFree, lactoseFree, vegan, vegetarian]);
+
+  useEffect(() => {
+      navigation.setParams({save: saveFilters})
+    }, [saveFilters]
+  );
 
   return (
     <View style={styles.screen}>
       <View>
         <Text style={styles.title}>Filters available</Text>
       </View>
-      <FiltersSwitch title={'Gluten free'} state={glutenFree} onChange={newValue=> setGlutenFree(newValue)}/>
-      <FiltersSwitch title={'Lactose free'} state={lactoseFree} onChange={newValue=> setLactoseFree(newValue)}/>
-      <FiltersSwitch title={'Vegan'} state={vegan} onChange={newValue=> setVegan(newValue)}/>
-      <FiltersSwitch title={'Vegetarian'} state={vegetarian} onChange={newValue=> setVegetarian(newValue)}/>
+      <FiltersSwitch title={'Gluten free'} state={glutenFree} onChange={newValue => setGlutenFree(newValue)}/>
+      <FiltersSwitch title={'Lactose free'} state={lactoseFree} onChange={newValue => setLactoseFree(newValue)}/>
+      <FiltersSwitch title={'Vegan'} state={vegan} onChange={newValue => setVegan(newValue)}/>
+      <FiltersSwitch title={'Vegetarian'} state={vegetarian} onChange={newValue => setVegetarian(newValue)}/>
     </View>
   )
 };
@@ -42,7 +60,12 @@ FiltersScreen.navigationOptions = navData => {
     headerTitle: 'Filter your meals!',
     headerLeft: (
       <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
-        <Item title='sideMenu' iconName='ios-menu' onPress={()=> navData.navigation.toggleDrawer()}/>
+        <Item title='sideMenu' iconName='ios-menu' onPress={() => navData.navigation.toggleDrawer()}/>
+      </HeaderButtons>
+    ),
+    headerRight: (
+      <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
+        <Item title='sideMenu' iconName='ios-save' onPress={navData.navigation.getParam('save')}/>
       </HeaderButtons>
     )
   }
