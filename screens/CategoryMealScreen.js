@@ -21,6 +21,4 @@ CategoryMealScreen.navigationOptions = navigationData => {
   }
 };
 
-
-
 export default CategoryMealScreen

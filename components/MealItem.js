@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   screen: {
     height: 200,
     width: '100%',
-    marginVertical: 10,
+    marginVertical: 5,
     borderRadius: 15,
     overflow: 'hidden'
   },

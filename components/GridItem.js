@@ -22,7 +22,7 @@ const GridItem = props => {
 const styles = StyleSheet.create({
   gridItemContainer: {
     flex: 1,
-    margin: 12,
+    margin: 8,
     height: 150,
     borderRadius: 15,
     elevation: 5,
