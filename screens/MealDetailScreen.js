@@ -29,7 +29,7 @@ const MealDetailScreen = props => {
         <Image style={styles.image} source={{uri: mealToDisplay.imageUrl}}/>
       </View>
       <View style={styles.informationContainer}>
-        <DefaultText>{mealToDisplay.duration}m</DefaultText>
+        <DefaultText>{mealToDisplay.duration}min</DefaultText>
         <DefaultText>{mealToDisplay.complexity.toUpperCase()}</DefaultText>
         <DefaultText>{mealToDisplay.affordability.toUpperCase()}</DefaultText>
       </View>
