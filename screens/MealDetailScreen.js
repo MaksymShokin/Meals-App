@@ -10,7 +10,9 @@ const MealDetailScreen = props => {
   const mealId = props.navigation.getParam('mealId');
 
   const availableMeals = useSelector(state => state.meals.meals);
+  const favouriteMeals = useSelector(state => state.meals.favouriteMeals);
   const mealToDisplay = availableMeals.find(meal => meal.id === mealId);
+  const currentMealIsFav = favouriteMeals.some(meal => meal.id === mealId);
 
   const dispatch = useDispatch();
 
@@ -23,6 +25,9 @@ const MealDetailScreen = props => {
   },[toggleFavouriteHandler]);
   // title will appear only after render with delay
 
+  useEffect(() => {
+    props.navigation.setParams({isFav: currentMealIsFav})
+  },[currentMealIsFav]);
 
   const ingredientsList = mealToDisplay.ingredients.map(elem => {
       return (
@@ -65,12 +70,13 @@ const MealDetailScreen = props => {
 MealDetailScreen.navigationOptions = navigationData => {
   const mealTitle = navigationData.navigation.getParam('title');
   const favMealHandler = navigationData.navigation.getParam('toggleFav');
+  const isFav = navigationData.navigation.getParam('isFav');
 
   return {
     headerTitle: mealTitle,
     headerRight: (
       <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
-        <Item title='Favourite' iconName='ios-star' onPress={favMealHandler}/>
+        <Item title='Favourite' iconName={isFav ? 'ios-star' : 'ios-star-outline'} onPress={favMealHandler}/>
       </HeaderButtons>
     )
   }
